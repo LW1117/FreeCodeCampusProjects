@@ -1,0 +1,1 @@
+# Contains code for projects done for freecodecamp certificates
