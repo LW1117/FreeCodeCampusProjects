@@ -47,6 +47,9 @@ class Category:
             return False
         return True
 
+def create_spend_chart(category_list):
+    pass
+
 # food = Category("food")
 # travel = Category("travel")
 # food.deposit(2000, 'hello')
@@ -73,6 +76,9 @@ auto.withdraw(15)
 
 print(food)
 print(clothing)
+
+category_list = [food, clothing, auto]
+print(create_spend_chart(category_list))
 
 # print(create_spend_chart([food, clothing, auto]))
  
