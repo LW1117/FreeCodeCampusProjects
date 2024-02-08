@@ -84,10 +84,6 @@ function goCave() {
     update(locations[2]);
 }
 
-function fightDragon() {
-    console.log('Fighting dragon.')
-}
-
 function buyHealth() {
     if (gold >= 10) {
         gold -= 10;
@@ -98,8 +94,6 @@ function buyHealth() {
     }
     else {
         text.innerText = 'You do not have enough gold to buy health';
-        button2.innerText = 'Sell weapon for 15 gold';
-        button2.onclick = sellWeapon;
     }
 }
 
@@ -120,14 +114,33 @@ function buyWeapon() {
     }
     else {
         text.innerText = 'You already have the most powerfull weapon';
+        button2.innerText = 'Sell weapon for 15 gold';
+        button2.onclick = sellWeapon;
+    }
+}
+
+function sellWeapon() {
+    if (inventory.length > 1) {
+        gold += 15;
+        goldText.innerText = gold;
+        let currentWeapon = inventory.shift();
+        text.innerText = 'You sold a ' + currentWeapon + '.';
+        text.innerText += 'In your inventory you have: ' + inventory;
+    }
+    else {
+        text.innerText = "Don't sell your only weapons.";
     }
 }
 
 function fightSlime() {
     console.log('Fighting dragon.')
+    
 }
 
 function fightBeast() {
     console.log('Fighting dragon.')
 }
 
+function fightDragon() {
+    console.log('Fighting dragon.')
+}
